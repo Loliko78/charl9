@@ -6,4 +6,4 @@ requests==2.27.1
 urllib3==1.26.8
 wheel==0.36.2
 telebot==0.0.4
-ыуегзещщды==57.0.0
+setuptools==57.0.0
