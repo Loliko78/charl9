@@ -7,3 +7,5 @@ urllib3==1.26.8
 wheel==0.36.2
 telebot==0.0.4
 setuptools==57.0.0
+charset_normalizer==2.0.12
+pip==21.1.2
