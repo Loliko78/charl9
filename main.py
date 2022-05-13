@@ -6,16 +6,48 @@ bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 @bot.message_handler(commands=["ghoul"])
 def ghoul(m, res=False):
   a = 1000
-  while a>0:  
+  while a>0:
     a=a-7
     b=a+7
     bot.send_message(m.chat.id, f'{b}-7={a}')
 # Запускаем бота
 @bot.message_handler(commands=["news"])
-def news(m, res=False):
-    bot.send_message(m.chat.id, 'Короче что нового в версии 1.1.0, мой создатель проебался 3 раза подряд из-за чего чуть не положил серваки.Короче пошли вы нахер я ебал эту залупу. Из нового все команды txt ыбыли переведены в /команды так же добавлена это функция news. Всем удачи по новым предложениям пишите в лс')
+def news(m, res = False):
+    bot.send_message(m.chat.id, 'Что нового: \n Во-первых это расписание /rasp\n Во-Вторых это /phone и /random\n Charl v.1.0.7')
+@bot.message_handler(commands=["rasp"])
+def rasp(m,res=False):
+    bot.send_message(m.chat.id, 'Пн:  \n 1)Биология \n 2)Русский \n 3)Литиратура \n 4)Алгебра \n 5)Обществознание \n 6)Геометрия')
+    bot.send_message(m.chat.id, 'Вт:  \n 1)География \n 2)Информатика \n 3)Немецкий \n 4)Немеукий \n 5)Алгебра \n 6)Химия')
+    bot.send_message(m.chat.id, 'Ср:  \n 1)Физ-ра \n 2)Немецкий \n 3)Русский \n 4)Немецкий \n 5)История \n 6)Литература')
+    bot.send_message(m.chat.id, 'Чт:  \n 1)Русский \n 2)География \n 3)Немецкий \n 4)Немецкий \n 5)Физика \n 6)ОБЖ')
+    bot.send_message(m.chat.id, 'Пт:  \n 1)Литиратура \n 2)Английский \n 3)Химия \n 4)Алгебра \n 5)Геометрия \n 6)Физ-ра')
+    bot.send_message(m.chat.id, 'Суббота:  \n 1)Технология(Черчениие) \n 2)Физика \n 3)Геометрия \n 4)История \n 5)Физ-ра \n 6)Биология')
+@bot.message_handler(commands=["react"])
+def react(m,res=False):
+    rando = random.randint(0,1)
+    if rando == 0:
+        bot.send_message(m.chat.id, '👍')
+    else:
+        bot.send_message(m.chat.id, '👎')
+@bot.message_handler(commands=["random"])
+def random(m,res=False):
+    a = random.randint(0,10)
+    bot.send_message(m.chat.id, f'Выпало число: {a}')
+@bot.message_handler(commands=["phone"])
+def phone(m,res=False):
+    mark = ['xiomi', 'samsung', 'iphone', 'honor', 'oneplus', 'huawai']
+    os = ['mi', 'ui', 'clean_android', 'ios']
+    camera = ['1', 'none', '12', '24', '128']
+    lagi = random.randint(0, 100)
+    a = random.choice(mark)
+    b = random.choice(os)
+    c = random.choice(camera)
+    bot.send_message(m.chat.id, f'Марка: {a}')
+    bot.send_message(m.chat.id, f'Оболочка: {b}')
+    bot.send_message(m.chat.id, f'Камера: {c}')
+    bot.send_message(m.chat.id, f'Процент лагов: {lagi}%')
 @bot.message_handler(commands=["a_help"])
-def a_help(m, res = False):
+def echo(m, res = False):
   bot.send_message(m.chat.id, '/about - немного про бота')
   bot.send_message(m.chat.id, '/contacts - ещё не допилил')
   bot.send_message(m.chat.id, '/txt - там свои фишки с текстом(8===D; phone; random; Vама')
@@ -23,14 +55,13 @@ def a_help(m, res = False):
   bot.send_message(m.chat.id, '/iq - оценка ума')
   bot.send_message(m.chat.id, '/ashka - рандом аш')
   bot.send_message(m.chat.id, '/monetka - монетка')
+  bot.send_message(m.chat.id, '/gus - пасхл')
+  bot.send_message(m.chat.id, '/ari - пасхл')
   bot.send_message(m.chat.id, '/chern - пасхл')
+  bot.send_message(m.chat.id, '/katy - пасхл')
   bot.send_message(m.chat.id, '/Game - игры')
-  bot.send_message(m.chat.id, '/chlen - игры')
-  bot.send_message(m.chat.id, '/mama - игры')
-  bot.send_message(m.chat.id, '/random - игры')
-  bot.send_message(m.chat.id, '/y21y - игры')
 @bot.message_handler(commands=["help"])
-def help(m, res = False):
+def echo(m, res = False):
   bot.send_message(m.chat.id, '/about - немного про бота')
   bot.send_message(m.chat.id, '/contacts - ещё не допилил')
   bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
@@ -54,32 +85,28 @@ def txt(m, res = False):
      bot.send_message(m.chat.id, 'В разработке')
    elif message.text == 'Расписание':
      bot.send_message(m.chat.id, 'В разработке')
-@bot.message_handler(commands = ['chlen'])
-def chlen(m,res = False):
+   elif message.text == '8===D':
      a = 0
      while a < 100:
        a=a+10
        bot.send_message(m.chat.id, '8===)')
        bot.send_message(m.chat.id, '8===D ()')
-@bot.message_handler(commands = ['phone'])
-def phone(m,res = False):
-    mark = ['xiomi','samsung','iphone', 'honor','oneplus','huawai']
-    os = ['mi','ui','clean_android','ios']
-    camera = ['1', 'none', '12','24','128']
-    lagi = random.randint(0,100)
-    a = random.choice(mark)
-    b = random.choice(os)
-    c = random.choice(camera)
-    bot.send_message(m.chat.id, f'Марка: {a}')
-    bot.send_message(m.chat.id, f'Оболочка: {b}')
-    bot.send_message(m.chat.id, f'Камера: {c}')
-    bot.send_message(m.chat.id, f'Процент лагов: {lagi}%')
-@bot.message_handler(commands = ['random'])
-def random(m,res = False):
-    chislo = random.randint(0,256)
-    bot.send_message(m.chat.id, f'Выпало число: {chislo}')
-@bot.message_handler(commands = ['mama'])
-def mama(m,res = False):
+   elif message.text == 'phone':
+      mark = ['xiomi','samsung','iphone', 'honor','oneplus','huawai']
+      os = ['mi','ui','clean_android','ios']
+      camera = ['1', 'none', '12','24','128']
+      lagi = random.randint(0,100)
+      a = random.choice(mark)
+      b = random.choice(os)
+      c = random.choice(camera)
+      bot.send_message(m.chat.id, f'Марка: {a}')
+      bot.send_message(m.chat.id, f'Оболочка: {b}')
+      bot.send_message(m.chat.id, f'Камера: {c}')
+      bot.send_message(m.chat.id, f'Процент лагов: {lagi}%')
+   elif message.text == 'random':
+     chislo = random.randint(0,256)
+     bot.send_message(m.chat.id, f'Выпало число: {chislo}')
+   elif message.text == 'Мама':
     bot.send_message(m.chat.id, 'У тебя сдохла мать')
     bot.send_message(m.chat.id, "И некого мне ебать")
 @bot.message_handler(commands = ['monetka'])
@@ -93,12 +120,12 @@ def monetka(m,res = False):
        bot.send_message(m.chat.id, '!!!РЕБРОМ!!!')
 @bot.message_handler(commands = ['oz'])
 def oz(m,res =False):
-    a = random.randint(0, 100)
-    i = 0
-    while i<100:
+      a = random.randint(0, 100)
+      i = 0
+      while i<100:
         i = i + 10
         bot.send_message(m.chat.id, f'Загрузка: {i}%')
-    bot.send_message(m.chat.id, f'Вы красивы на: {a}%')
+      bot.send_message(m.chat.id, f'Вы красивы на: {a}%')
 @bot.message_handler(commands = ['iq'])
 def iq(m, res = False):
     a = random.randint(0, 100)
@@ -134,7 +161,9 @@ def chern(m,res =False):
 @bot.message_handler(commands = ['gus'])
 def gus(m,res =False):
   bot.send_message(m.chat.id, 'Гусь')
-@bot.message_handler(commands = ['y21y'])
+@bot.message_handler(commands = ['Game'])
+def Game(m, res = False):
+  @bot.message_handler(commands = ['y21y'])
   def y21y(message):
     i = 0
     markup = types.InlineKeyboardMarkup()
@@ -142,24 +171,22 @@ def gus(m,res =False):
     button2 = types.InlineKeyboardButton(text = 'Пасс', callback_data = 'no')
     markup.add(button1, button2)
     bot.send_message(m.chat.id, 'Что хотите сделать', reply_markup = markup)
-    while i <= 21:     
+    while i <= 21:
       @bot.callback_query_handler(func = lambda call: True)
       def answer(call):
+        i = 0
         if call.data == 'yes':
           i = i + random.randint(1,9)
           bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}')
         elif call.data == 'no':
-          i = i+0
-          bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}') 
+          i = i +0
+          bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}')
 @bot.message_handler(commands = ['Dengi'])
-def Dengi(m,res =False):
+def gus(m,res =False):
   bot.send_message(m.chat.id, 'Пошёл нахуй, еврей')
   i = 0
   while i<100:
     i+=9
     bot.send_message(m.chat.id, 'Пошёл нахуй, еврей')
-@bot.message_handler(commands = ['Oracle'])
-def Oracle(m,res = False):
-  pass
 bot.infinity_polling()
-bot.polling(none_stop=True, interval=0)  
+bot.polling(none_stop=True, interval=0)
