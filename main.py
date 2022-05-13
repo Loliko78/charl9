@@ -13,7 +13,7 @@ def ghoul(m, res=False):
 # Запускаем бота
 @bot.message_handler(commands=["news"])
 def news(m, res=False):
-    bot.send_message(m.res.id, 'Короче что нового в версии 1.1.0, мой создатель проебался 3 раза подряд из-за чего чуть не положил серваки.Короче пошли вы нахер я ебал эту залупу. Из нового все команды txt ыбыли переведены в /команды так же добавлена это функция news. Всем удачи по новым предложениям пишите в лс')
+    bot.send_message(m.chat.id, 'Короче что нового в версии 1.1.0, мой создатель проебался 3 раза подряд из-за чего чуть не положил серваки.Короче пошли вы нахер я ебал эту залупу. Из нового все команды txt ыбыли переведены в /команды так же добавлена это функция news. Всем удачи по новым предложениям пишите в лс')
 @bot.message_handler(commands=["a_help"])
 def a_help(m, res = False):
   bot.send_message(m.chat.id, '/about - немного про бота')
@@ -134,9 +134,7 @@ def chern(m,res =False):
 @bot.message_handler(commands = ['gus'])
 def gus(m,res =False):
   bot.send_message(m.chat.id, 'Гусь')
-@bot.message_handler(commands = ['Game'])
-def Game(m, res = False):
-  @bot.message_handler(commands = ['y21y'])
+@bot.message_handler(commands = ['y21y'])
   def y21y(message):
     i = 0
     markup = types.InlineKeyboardMarkup()
