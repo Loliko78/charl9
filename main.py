@@ -63,21 +63,21 @@ def chlen(m,res = False):
        bot.send_message(m.chat.id, '8===D ()')
 @bot.message_handler(commands = ['phone'])
 def phone(m,res = False):
-      mark = ['xiomi','samsung','iphone', 'honor','oneplus','huawai']
-      os = ['mi','ui','clean_android','ios']
-      camera = ['1', 'none', '12','24','128']
-      lagi = random.randint(0,100)
-      a = random.choice(mark)
-      b = random.choice(os)
-      c = random.choice(camera)
-      bot.send_message(m.chat.id, f'Марка: {a}')
-      bot.send_message(m.chat.id, f'Оболочка: {b}')
-      bot.send_message(m.chat.id, f'Камера: {c}')
-      bot.send_message(m.chat.id, f'Процент лагов: {lagi}%')
+    mark = ['xiomi','samsung','iphone', 'honor','oneplus','huawai']
+    os = ['mi','ui','clean_android','ios']
+    camera = ['1', 'none', '12','24','128']
+    lagi = random.randint(0,100)
+    a = random.choice(mark)
+    b = random.choice(os)
+    c = random.choice(camera)
+    bot.send_message(m.chat.id, f'Марка: {a}')
+    bot.send_message(m.chat.id, f'Оболочка: {b}')
+    bot.send_message(m.chat.id, f'Камера: {c}')
+    bot.send_message(m.chat.id, f'Процент лагов: {lagi}%')
 @bot.message_handler(commands = ['random'])
 def random(m,res = False):
-     chislo = random.randint(0,256)
-     bot.send_message(m.chat.id, f'Выпало число: {chislo}')       
+    chislo = random.randint(0,256)
+    bot.send_message(m.chat.id, f'Выпало число: {chislo}')
 @bot.message_handler(commands = ['mama'])
 def mama(m,res = False):
     bot.send_message(m.chat.id, 'У тебя сдохла мать')
@@ -93,12 +93,12 @@ def monetka(m,res = False):
        bot.send_message(m.chat.id, '!!!РЕБРОМ!!!')
 @bot.message_handler(commands = ['oz'])
 def oz(m,res =False):
-      a = random.randint(0, 100)
-      i = 0           
-      while i<100:
+    a = random.randint(0, 100)
+    i = 0
+    while i<100:
         i = i + 10
         bot.send_message(m.chat.id, f'Загрузка: {i}%')
-      bot.send_message(m.chat.id, f'Вы красивы на: {a}%') 
+    bot.send_message(m.chat.id, f'Вы красивы на: {a}%')
 @bot.message_handler(commands = ['iq'])
 def iq(m, res = False):
     a = random.randint(0, 100)
@@ -106,7 +106,7 @@ def iq(m, res = False):
     while i<100:
       i = i + 10
       bot.send_message(m.chat.id, f'Загрузка: {i}%')
-    bot.send_message(m.chat.id, f'Вы умны на: {a}%') 
+    bot.send_message(m.chat.id, f'Вы умны на: {a}%')
 @bot.message_handler(commands = ['test1'])
 def test1(m, res = False):
   bot.send_message(m.chat.id,'Здравствуйте, это тест на дед инайда!')
