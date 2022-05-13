@@ -13,9 +13,9 @@ def ghoul(m, res=False):
 # Запускаем бота
 @bot.message_handler(commands=["news"])
 def news(m, res=False):
-  bot.send_message(m.res.id, 'Короче что нового в версии 1.1.0, мой создатель проебался 3 раза подряд из-за чего чуть не положил серваки.Короче пошли вы нахер я ебал эту залупу. Из нового все команды txt ыбыли переведены в /команды так же добавлена это функция news. Всем удачи по новым предложениям пишите в лс')
+    bot.send_message(m.res.id, 'Короче что нового в версии 1.1.0, мой создатель проебался 3 раза подряд из-за чего чуть не положил серваки.Короче пошли вы нахер я ебал эту залупу. Из нового все команды txt ыбыли переведены в /команды так же добавлена это функция news. Всем удачи по новым предложениям пишите в лс')
 @bot.message_handler(commands=["a_help"])
-def echo(m, res = False):
+def a_help(m, res = False):
   bot.send_message(m.chat.id, '/about - немного про бота')
   bot.send_message(m.chat.id, '/contacts - ещё не допилил')
   bot.send_message(m.chat.id, '/txt - там свои фишки с текстом(8===D; phone; random; Vама')
@@ -30,7 +30,7 @@ def echo(m, res = False):
   bot.send_message(m.chat.id, '/random - игры')
   bot.send_message(m.chat.id, '/y21y - игры')
 @bot.message_handler(commands=["help"])
-def echo(m, res = False):
+def help(m, res = False):
   bot.send_message(m.chat.id, '/about - немного про бота')
   bot.send_message(m.chat.id, '/contacts - ещё не допилил')
   bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
