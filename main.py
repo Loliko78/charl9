@@ -17,7 +17,7 @@ def getanekdot():
         z=z+s+'\n\n'
     return s
 
-@bot.message_handler(commands = ["anek"])
+@bot.message_handler(content_types = ["anek"])
 def handle_text(message):
     msg=message.text
     msg=msg.lower()
