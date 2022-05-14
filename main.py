@@ -21,7 +21,7 @@ def getanekdot():
 def handle_text(message):
     msg=message.text
     msg=msg.lower()
-    if (u'анекдот' in msg):
+    if msg=='анекдот':
         try:
             bot.send_message(message.from_user.id, getanekdot())
         except:
