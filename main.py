@@ -9,10 +9,10 @@ bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 
 @bot.message_handler(commands=["dis"])
 def dis(m, res=False):
-    bot.send_message(m.chat.id, ':dislike:')
+    bot.send_message(m.chat.id, '👎')
 @bot.message_handler(commands=["l"])
 def l(m, res=False):
-    bot.send_message(m.chat.id, ':like:')
+    bot.send_message(m.chat.id, '👍')
 @bot.message_handler(commands=["admin"])
 def admin(m, res=False):
     i = 0
