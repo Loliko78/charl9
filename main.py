@@ -13,6 +13,12 @@ def dis(m, res=False):
 @bot.message_handler(commands=["l"])
 def l(m, res=False):
     bot.send_message(m.chat.id, '👍')
+@bot.message_handler(commands=["dis18"])
+def l18(m, res=False):
+    i = 0
+    while i < 100:
+        bot.send_message(m.chat.id, '👎')
+        i += 8
 @bot.message_handler(commands=["admin"])
 def admin(m, res=False):
     i = 0
