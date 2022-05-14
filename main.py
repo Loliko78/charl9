@@ -7,6 +7,11 @@ import bs4
 bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 # Функция, обрабатывающая команду /start
 
+@bot.message_handler(commands=["rt"])
+def rt(m, res=False):
+    i = 0
+    while i <0:
+        bot.send_message(m.chat.id, 'Рита бот')
 def getanekdot():
     z=''
     s=requests.get('http://anekdotme.ru/random')
