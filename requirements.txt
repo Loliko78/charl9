@@ -9,3 +9,4 @@ telebot==0.0.4
 setuptools==57.0.0
 charset_normalizer==2.0.12
 pip==21.1.2
+bs4==0.0.1
