@@ -31,30 +31,6 @@ def rt(m, res=False):
     while i <100:
         bot.send_message(m.chat.id, 'Рита бот')
         i+=10
-def getanekdot():
-    z=''
-    s=requests.get('http://anekdotme.ru/random')
-    b=bs4.BeautifulSoup(s.text, "html.parser")
-    p=b.select('.anekdot_text')
-    for x in p:
-        s=(x.getText().strip())
-        z=z+s+'\n\n'
-    return s
-
-@bot.message_handler(content_types = ["anek"])
-def handle_text(message):
-    msg=message.text
-    msg=msg.lower()
-    if msg=='анекдот':
-        try:
-            bot.send_message(message.from_user.id, getanekdot())
-        except:
-            pass
-    else:
-        bot.send_message(message.from_user.id, u'Напишите мне слово Анекдот')
-@bot.message_handler(commands=['start', 'help'])
-def handle_start_help(message):
-    bot.send_message(message.from_user.id, u'Напишите мне слово Анекдот')
 
 @bot.message_handler(commands=["ghoul"])
 def ghoul(m, res=False):
@@ -75,13 +51,14 @@ def rasp(m, res=False):
     bot.send_message(m.chat.id, 'Чт:  \n 1)Русский \n 2)География \n 3)Немецкий \n 4)Немецкий \n 5)Физика \n 6)ОБЖ')
     bot.send_message(m.chat.id, 'Пт:  \n 1)Литиратура \n 2)Английский \n 3)Химия \n 4)Алгебра \n 5)Геометрия \n 6)Физ-ра')
     bot.send_message(m.chat.id, 'Суббота:  \n 1)Технология(Черчениие) \n 2)Физика \n 3)Геометрия \n 4)История \n 5)Физ-ра \n 6)Биология')
-@bot.message_handler(commands=["react"])
-def react(m, res=False):
+@bot.message_handler(commands=["rect"])
+def rect(m, res=False):
+    import random
     rando = random.randint(0, 1)
     if rando == 0:
-        bot.send_message(m.chat.id, ':like:')
+        bot.send_message(m.chat.id, '👍')
     else:
-        bot.send_message(m.chat.id, ':dislike:')
+        bot.send_message(m.chat.id, '👎')
 @bot.message_handler(commands=["random"])
 def random(m, res=False):
     a = random.randint(0, 10)
