@@ -6,7 +6,22 @@ import bs4
 
 bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 # Функция, обрабатывающая команду /start
-
+@bot.message_handler(commands=['start'])
+def start(m, res = False):
+    bot.send_message(m.chat.id, '/about - немного про бота')
+    bot.send_message(m.chat.id, '/contacts - https://vk.com/kerohov')
+    bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
+    bot.send_message(m.chat.id, '/ov - оценка внешности')
+    bot.send_message(m.chat.id, '/iq - оценка ума')
+    bot.send_message(m.chat.id, '/Game - игры')
+    bot.send_message(m.chat.id, '/dis - кидаем дизлайк')
+    bot.send_message(m.chat.id, 'l - кидаем лайк')
+    bot.send_message(m.chat.id, '/dis18 - дизлайк 18 раз')
+    bot.send_message(m.chat.id, '/rect - рандомная реакция')
+    bot.send_message(m.chat.id, '/rasp - расписание')
+    bot.send_message(m.chat.id, '/ghoul - я гуль')
+    bot.send_message(m.chat.id, '/random - рандом')
+    bot.send_message(m.chat.id, '/chlen - рандом')
 @bot.message_handler(commands=["dis"])
 def dis(m, res=False):
     bot.send_message(m.chat.id, '👎')
@@ -31,7 +46,13 @@ def rt(m, res=False):
     while i <100:
         bot.send_message(m.chat.id, 'Рита бот')
         i+=10
-
+@bot.message_handler(commands=['chlen'])
+def chlen(m, res = False):
+    a = 0
+    while a < 100:
+        a = a + 10
+        bot.send_message(m.chat.id, '8===)')
+        bot.send_message(m.chat.id, '8===D ()')
 @bot.message_handler(commands=["ghoul"])
 def ghoul(m, res=False):
   a = 1000
@@ -54,13 +75,12 @@ def rasp(m, res=False):
 @bot.message_handler(commands=["rect"])
 def rect(m, res=False):
     import random
-    rando = random.randint(0, 1)
-    if rando == 0:
-        bot.send_message(m.chat.id, '👍')
-    else:
-        bot.send_message(m.chat.id, '👎')
+    react = ['👍','👎','😂','❤','😢','🤬','🤮','🖕','🥵','😵‍💫']
+    a = random.choice(react)
+    bot.send_message(m.chat.id, f'{a}')
 @bot.message_handler(commands=["random"])
 def random(m, res=False):
+    import random
     a = random.randint(0, 10)
     bot.send_message(m.chat.id, f'Выпало число: {a}')
 @bot.message_handler(commands=["phon"])
