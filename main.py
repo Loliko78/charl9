@@ -15,7 +15,7 @@ def start(m, res = False):
     bot.send_message(m.chat.id, '/iq - оценка ума')
     bot.send_message(m.chat.id, '/Game - игры')
     bot.send_message(m.chat.id, '/dis - кидаем дизлайк')
-    bot.send_message(m.chat.id, 'l - кидаем лайк')
+    bot.send_message(m.chat.id, '/l - кидаем лайк')
     bot.send_message(m.chat.id, '/dis18 - дизлайк 18 раз')
     bot.send_message(m.chat.id, '/rect - рандомная реакция')
     bot.send_message(m.chat.id, '/rasp - расписание')
