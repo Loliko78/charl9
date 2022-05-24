@@ -226,6 +226,9 @@ def Game(m, res = False):
         elif call.data == 'no':
           i = i +0
           bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}')
+@bot.message_handler(commands = ['qr'])
+def qr(m,res =False):
+    bot.send_message(m.chat.id, 'Я знаю что это наврятли найдёт та которой это адресованно, это больше для души...\n Ты мне нравишься и хоть ты это не найдёшь но это так....')
 @bot.message_handler(commands = ['Dengi'])
 def gus(m,res =False):
   bot.send_message(m.chat.id, 'Пошёл нахуй, еврей')
