@@ -226,6 +226,20 @@ def Game(m, res = False):
         elif call.data == 'no':
           i = i +0
           bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}')
+@bot.message_handler(commands=['droch'])
+def droch(message, m, res = False):
+    bot.send_message(m.chat.id, 'Какой у тебя объём руки в членах?')
+    ob = int(message.text)
+    bot.send_message(m.chat.id, 'Сколько людей в помещение?')
+    kol = int(message.text)
+    tim = 300
+    otv = kol*tim/ob
+    sek = otv
+    if sek > 60:
+        min = sek//60
+        bot.send_message(m.chat.id, f'Вам понадобится: {min} минут')
+    else:
+        bot.send_message(m.chat.id, f'Вам понадобится: {sek} секунд')
 @bot.message_handler(commands = ['qr'])
 def qr(m,res =False):
     bot.send_message(m.chat.id, 'Я знаю что это наврятли найдёт та которой это адресованно, это больше для души...\n Ты мне нравишься и хоть ты это не найдёшь но это так....')
