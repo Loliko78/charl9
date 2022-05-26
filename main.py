@@ -21,7 +21,18 @@ def start(m, res = False):
     bot.send_message(m.chat.id, '/rasp - расписание')
     bot.send_message(m.chat.id, '/ghoul - я гуль')
     bot.send_message(m.chat.id, '/random - рандом')
-    bot.send_message(m.chat.id, '/chlen - рандом')
+    bot.send_message(m.chat.id, '/chlen - член')
+    bot.send_message(m.chat.id, '/spas - СПАС')
+@bot.message_handler(commands=['pes'])
+def pes(message,m, res = False):
+    pesn = ['C:/Users/Games/Desktop/My_project/charl8/musik/13Kai_Kassi_-_Stoner_feat_FLESH.mp3', 'C:/Users/Games/Desktop/My_project/charl8/musik/Djizus_-_Alone_In_This_World.mp3', 'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_HOTBOX.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_INTERNAL_2_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/ FLESH_-_INTERNAL_2_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_Ona_Bez_Tormozov_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_UBIVAYUS_YADOM.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_-_Harakter.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_LIZER_Otdaj_sebya.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_ROCKET_MARCO_9_Tajnaya_Komnata.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/MARCO_9_ROCKET_LILDRUGHILL_Trep_Alligator.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_CHempion.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Lyubi_Menya_Poka_Tut_YA.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Vaib.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Zanovo_2.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Bez_lifaka.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/','C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Kussen.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/WhyBaby___Hleb_-_Kiska.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/Yanix_-_Mamasita.mp3']
+    rando = random.choice(pesn)
+    audio = open(rando, 'rb')
+    bot.send_audio(message.chat.id, audio)
+    audio.close()
+@bot.message_handler(commands=['spas'])
+def spas(m, res = False):
+    bot.send_message(m.chat.id, 'КАНАЛ СПАС СПАСИ СВОЮ ДУШУ И ПОСТАВЬ ДУШУ МАТЕРИ!')
 @bot.message_handler(commands=["dis"])
 def dis(m, res=False):
     bot.send_message(m.chat.id, '👎')
@@ -242,7 +253,7 @@ def droch(message, m, res = False):
         bot.send_message(m.chat.id, f'Вам понадобится: {sek} секунд')
 @bot.message_handler(commands = ['qr'])
 def qr(m,res =False):
-    bot.send_message(m.chat.id, 'Я знаю что это наврятли найдёт та которой это адресованно, это больше для души...\n Ты мне нравишься и хоть ты это не найдёшь но это так....')
+    bot.send_message(m.chat.id, 'Я знаю что это наврятли найдёт та которой это адресованно, это больше для души...\n Но если ты все же это читаешь то....\n Ты мне нравишься....')
 @bot.message_handler(commands = ['Dengi'])
 def gus(m,res =False):
   bot.send_message(m.chat.id, 'Пошёл нахуй, еврей')
