@@ -6,10 +6,10 @@ import bs4
 
 bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 # Функция, обрабатывающая команду /start
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start', 'help'])
 def start(m, res = False):
     bot.send_message(m.chat.id, '/about - немного про бота')
-    bot.send_message(m.chat.id, '/contacts - https://vk.com/kerohov')
+    bot.send_message(m.chat.id, '/contacts - контакты создателя')
     bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
     bot.send_message(m.chat.id, '/ov - оценка внешности')
     bot.send_message(m.chat.id, '/iq - оценка ума')
@@ -174,20 +174,12 @@ def echo(m, res = False):
   bot.send_message(m.chat.id, '/chern - пасхл')
   bot.send_message(m.chat.id, '/katy - пасхл')
   bot.send_message(m.chat.id, '/Game - игры')
-@bot.message_handler(commands=["help"])
-def echo(m, res = False):
-  bot.send_message(m.chat.id, '/about - немного про бота')
-  bot.send_message(m.chat.id, '/contacts - ещё не допилил')
-  bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
-  bot.send_message(m.chat.id, '/oz - оценка внешности')
-  bot.send_message(m.chat.id, '/iq - оценка ума')
-  bot.send_message(m.chat.id, '/Game - игры')
 @bot.message_handler(commands=["about"])
 def about(m, res=False):
   bot.send_message(m.chat.id, 'Привет, я Charl. Моего создателя зовут Lolioo. Я создан ради веселья и хз чего ещё. Ну попробуй что нибудь')
 @bot.message_handler(commands=["contacts"])
 def contacts(m, res=False):
-  bot.send_message(m.chat.id, '1110101000011111000011110101011110111100000011010111111')
+  bot.send_message(m.chat.id, 'https://vk.com/kerohov')
 @bot.message_handler(commands=["share"])
 def share(m, res=False):
   bot.send_message(m.chat.id, 'share: https://t.me/Chalr_bot')
