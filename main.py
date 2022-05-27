@@ -66,7 +66,18 @@ def pes(m, res = False):
             'C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Bez_lifaka.mp3',
             'C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Kussen.mp3',
             'C:/Users/Games/Desktop/My_project/charl8/musik/WhyBaby___Hleb_-_Kiska.mp3',
-            'C:/Users/Games/Desktop/My_project/charl8/musik/Yanix_-_Mamasita.mp3']
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Yanix_-_Mamasita.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_BLOKBOY.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_DESERT_IGOR.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_MOLCHALIVYIY_BOB.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_PORNO_FLOW.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_YATREK.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/zxcursed_-_killua.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/MEYBI_BEYBI_-_AHEGAO.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/GONE.Fludd_-_PATSANYI_II.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Gone.Fludd_IROH_-_VKUS_YADA.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Dora_feat_MEIBI_BEIBI_-_Barbisaiz.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/YAMAUGLI_-_NYAM_NYAM.mp3']
     rando = random.choice(pesn)
     audio = open(rando, 'rb')
     bot.send_audio(m.chat.id, audio)
