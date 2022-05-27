@@ -23,12 +23,53 @@ def start(m, res = False):
     bot.send_message(m.chat.id, '/random - рандом')
     bot.send_message(m.chat.id, '/chlen - член')
     bot.send_message(m.chat.id, '/spas - СПАС')
+    bot.send_message(m.chat.id, '/pes - рандомный трек')
+    bot.send_message(m.chat.id, '/quq - рандомная цитата')
+@bot.message_handler(commands=['quq'])
+def quq(m, res = False):
+    import random
+    q = ['Вас делают похожими, чтобы управлять вами. Когда начинается война, вас превращают в патриотов.',
+         'Дети могут учиться всему уже в том возрасте, когда вы им сказки читаете. «Овечка встретил коровку. «Му-му», — сказала коровка. «Бе-бе», — ответила овечка. Вы забиваете голову ребенка этим дерьмом и хотите, чтобы он вырос разумным?',
+         'Мы либо научимся жить вместе, либо погибнем по одиночке.',
+         'Взглянув на небо, просто скажите: «Я не знаю, откуда все это», — и не сочиняйте небылицы.',
+         'Самые богатые люди обычно болваны. Один такой как-то спросил меня: «Раз вы такой умный, что же вы не разбогатели». Я ответил: «Раз вы такой богатый, что же вы не поумнели?».',
+         'Людям очень трудно научиться говорить «я не знаю».',
+         'Я пытаюсь вернуть вам мозги, которые у вас забрали в школе и при воспитании. Я пытаюсь показать вам, как устроен мир. Так что, если вы хотите сделать лучше этот мир, пора оторвать задницу от дивана и сделать его лучше.',
+         'Нет ничего плохого в том, чтобы соорудить нечто и понять, что оно не работает.',
+         'После того как мы украли нужную нам землю, что кстати сделали и все остальные страны, мы вывесили заповедь: «Не кради».',
+         'Если вы полагаете, что мир нельзя изменить, это лишь означает, что вы не один из тех, кто его изменит.',
+         'Личности как таковой не существует. Все мы проекции нашей среды обитания. С этим трудно смириться, но это так.',
+         'Когда государство ежегодно тратит 500 миллиардов долларов на оборонную промышленность и лишь два миллиарда на исследование среды нашего обитания, стоит задуматься, действительно ли на Земле существует разумная жизнь?',
+         'Мы несправедливо заявляем, что человек — высшая ступень эволюции: этому учат в школе. Человек уничтожает океаны, рыбу, атмосферу и друг друга. Человек, пролетая над городом, нажимает на кнопку и сжигает всех жителей атомным оружием. Наивысшее ли он творение природы? Ещё нет, на мой взгляд. Нам предстоит долгий путь. Мы либо создадим рай на Земле, либо уничтожим себя и впадём в забвение. Только будущее даст ответ. Каким оно будет — зависит от нас.',
+         'Они действительно верят в то, что какой-то парень, сидя на небесах, создал мужчину и женщину, поместил их в чудесной красоты сад и, конечно же, потом вышвырнул их оттуда. И этот парень любит всех и вся, между прочим.',
+         'Когда на пути евреев встретилось Красное море, Моисей поднял свой посох и воды расступились, чтобы они смогли перейти на другую сторону. Вообще-то, Бог смог бы перенести их туда и не разделяя воды.']
+    rando = random.choice(q)
+    bot.send_message(m.chat.id, f'{rando}\n Жак Фреско')
 @bot.message_handler(commands=['pes'])
-def pes(message,m, res = False):
-    pesn = ['C:/Users/Games/Desktop/My_project/charl8/musik/13Kai_Kassi_-_Stoner_feat_FLESH.mp3', 'C:/Users/Games/Desktop/My_project/charl8/musik/Djizus_-_Alone_In_This_World.mp3', 'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_HOTBOX.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_INTERNAL_2_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/ FLESH_-_INTERNAL_2_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_Ona_Bez_Tormozov_.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_UBIVAYUS_YADOM.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_-_Harakter.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_LIZER_Otdaj_sebya.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_ROCKET_MARCO_9_Tajnaya_Komnata.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/MARCO_9_ROCKET_LILDRUGHILL_Trep_Alligator.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_CHempion.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Lyubi_Menya_Poka_Tut_YA.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Vaib.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Zanovo_2.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Bez_lifaka.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/','C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Kussen.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/WhyBaby___Hleb_-_Kiska.mp3','C:/Users/Games/Desktop/My_project/charl8/musik/Yanix_-_Mamasita.mp3']
+def pes(m, res = False):
+    import random
+    pesn = ['C:/Users/Games/Desktop/My_project/charl8/musik/13Kai_Kassi_-_Stoner_feat_FLESH.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Djizus_-_Alone_In_This_World.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_HOTBOX.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_INTERNAL_2_.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/ FLESH_-_INTERNAL_2_.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_Ona_Bez_Tormozov_.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/FLESH_-_UBIVAYUS_YADOM.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_-_Harakter.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_LIZER_Otdaj_sebya.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/LILDRUGHILL_ROCKET_MARCO_9_Tajnaya_Komnata.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/MARCO_9_ROCKET_LILDRUGHILL_Trep_Alligator.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_CHempion.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Lyubi_Menya_Poka_Tut_YA.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Vaib.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/May_Wave_-_Zanovo_2.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Bez_lifaka.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Neverlove_-_Kussen.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/WhyBaby___Hleb_-_Kiska.mp3',
+            'C:/Users/Games/Desktop/My_project/charl8/musik/Yanix_-_Mamasita.mp3']
     rando = random.choice(pesn)
     audio = open(rando, 'rb')
-    bot.send_audio(message.chat.id, audio)
+    bot.send_audio(m.chat.id, audio)
     audio.close()
 @bot.message_handler(commands=['spas'])
 def spas(m, res = False):
