@@ -3,12 +3,12 @@ from telebot import types
 import random
 import requests
 import bs4
-
 bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 # Функция, обрабатывающая команду /start
 @bot.message_handler(commands=['start', 'help'])
 def start(m, res = False):
     bot.send_message(m.chat.id, '/about - немного про бота')
+    bot.send_message(m.chat.id, '/id - id пользователя')
     bot.send_message(m.chat.id, '/contacts - контакты создателя')
     bot.send_message(m.chat.id, '/txt - там свои фишки с текстом')
     bot.send_message(m.chat.id, '/ov - оценка внешности')
@@ -45,6 +45,10 @@ def quq(m, res = False):
          'Когда на пути евреев встретилось Красное море, Моисей поднял свой посох и воды расступились, чтобы они смогли перейти на другую сторону. Вообще-то, Бог смог бы перенести их туда и не разделяя воды.']
     rando = random.choice(q)
     bot.send_message(m.chat.id, f'{rando}\n Жак Фреско')
+@bot.message_handler(commands=['id'])
+def id(m, res = False):
+    a = m.from_user.id
+    bot.send_message(m.chat.id, f'Ваш id: {a}')
 @bot.message_handler(commands=['pes'])
 def pes(m, res = False):
     import random
@@ -259,6 +263,9 @@ def chern(m,res =False):
 @bot.message_handler(commands = ['gus'])
 def gus(m,res =False):
   bot.send_message(m.chat.id, 'Гусь')
+@bot.message_handler(commands = ['magik'])
+def magik(m, res = False):
+    pass
 @bot.message_handler(commands = ['Game'])
 def Game(m, res = False):
   @bot.message_handler(commands = ['y21y'])
@@ -282,11 +289,13 @@ def Game(m, res = False):
           i = i +0
           bot.send_message(call.message.chat.id, f'Счёт на данный момент: {i}')
 @bot.message_handler(commands=['droch'])
-def droch(message, m, res = False):
+def droch(m, res = False):
     bot.send_message(m.chat.id, 'Какой у тебя объём руки в членах?')
-    ob = int(message.text)
+    a = m.text
+    ob = int(a)
     bot.send_message(m.chat.id, 'Сколько людей в помещение?')
-    kol = int(message.text)
+    b = m.text
+    kol = int(b)
     tim = 300
     otv = kol*tim/ob
     sek = otv
