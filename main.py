@@ -45,6 +45,20 @@ def quq(m, res = False):
          'Когда на пути евреев встретилось Красное море, Моисей поднял свой посох и воды расступились, чтобы они смогли перейти на другую сторону. Вообще-то, Бог смог бы перенести их туда и не разделяя воды.']
     rando = random.choice(q)
     bot.send_message(m.chat.id, f'{rando}\n Жак Фреско')
+@bot.message_handler(commands=['reg_id'])
+def reg(m, res = False):
+    bot.send_message(m.chat.id, f'Вы зареганы, ваш id: {m.from_user.id} имя: {m.from_user.first_name}')
+    ad = m.from_user.id
+    name = m.from_user.first_name
+    import base as no
+    no.name.append(name)
+    no.base.append(ad)
+    print(no.base)
+    print(no.name)
+@bot.message_handler(commands=['i'])
+def send_welcome(m, res = False):
+    name = m.from_user.first_name
+    print(name)
 @bot.message_handler(commands=['id'])
 def id(m, res = False):
     a = m.from_user.id
