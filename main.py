@@ -60,14 +60,6 @@ def litra(m, res=False):
                         message.text = ''
                         break
 
-
-
-
-
-
-
-
-
 @bot.message_handler(commands=['quq'])
 def quq(m, res=False):
     import random
