@@ -3,7 +3,6 @@ import random
 import telebot
 from peewee import SqliteDatabase, AutoField, TextField, Model
 from telebot import types
-
 bot = telebot.TeleBot('5223141163:AAFzA01OXSX_BJSskrTB61GDDc6_OxePzU8')
 
 
@@ -28,18 +27,45 @@ def start(m, res=False):
     bot.send_message(m.chat.id, '/spas - СПАС')
     bot.send_message(m.chat.id, '/pes - рандомный трек')
     bot.send_message(m.chat.id, '/quq - рандомная цитата')
-
-
 @bot.message_handler(commands=['litra'])
 def litra(m, res=False):
-    from bs4 import BeautifulSoup
-    import requests as r
-    url = 'https://obrazovaka.ru/books?ysclid=l6q32rf4ab7641521'
-    req = r.get(url)
-    bs = BeautifulSoup(req.text, 'html.parser')
-    n = bs.find_all('div', class_='short__item')
-    name = bs.find('a')
-    print(n)
+        @bot.message_handler(content_types=['text'])
+        def get_text_messages(message):
+            import random
+            import requests as r
+            from bs4 import BeautifulSoup
+            from bs4.element import PageElement
+            import string
+
+            url = 'https://obrazovaka.ru/books?ysclid=l6q32rf4ab7641521'
+            req = r.get(url)
+            bs = BeautifulSoup(req.text, 'html.parser')
+            title = str(bs.find_all('div', class_='item__bottom'))
+            name = BeautifulSoup(title)
+            na = name.find_all('a')
+            reg = ''
+            link = ''
+            for i in range(750):
+                mes = message.text
+                link = str(na[i].get('href'))
+                reg = na[i].get_text()
+                mas = reg.find(f'{mes}')
+                if len(mes)>3:
+                    if mas >=0:
+                        print(mes)
+                        print(mas)
+                        print(reg)
+                        print(len(na))
+                        bot.send_message(message.chat.id, f'{reg}\n {link}\n')
+                        message.text = ''
+                        break
+
+
+
+
+
+
+
 
 
 @bot.message_handler(commands=['quq'])
