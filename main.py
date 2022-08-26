@@ -27,6 +27,8 @@ def start(m, res=False):
     bot.send_message(m.chat.id, '/spas - СПАС')
     bot.send_message(m.chat.id, '/pes - рандомный трек')
     bot.send_message(m.chat.id, '/quq - рандомная цитата')
+
+
 @bot.message_handler(commands=['litra'])
 def litra(m, res=False):
         @bot.message_handler(content_types=['text'])
