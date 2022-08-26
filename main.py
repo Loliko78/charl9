@@ -45,8 +45,6 @@ def litra(m, res=False):
             title = str(bs.find_all('div', class_='item__bottom'))
             name = BeautifulSoup(title)
             na = name.find_all('a')
-            reg = ''
-            link = ''
             for i in range(750):
                 mes = message.text
                 link = str(na[i].get('href'))
@@ -61,7 +59,6 @@ def litra(m, res=False):
                         bot.send_message(message.chat.id, f'{reg}\n {link}\n')
                         message.text = ''
                         break
-
 @bot.message_handler(commands=['quq'])
 def quq(m, res=False):
     import random
